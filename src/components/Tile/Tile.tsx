@@ -6,6 +6,7 @@ interface Props {
   highlight: boolean;
 }
 
+
 export default function Tile({ number, image, highlight }: Props) {
   const className: string = ["tile",
     number % 2 === 0 && "black-tile",
@@ -15,7 +16,7 @@ export default function Tile({ number, image, highlight }: Props) {
 
 
   return (
-    <div className={className}>
+    <div className={className +" "+ "holder"}>
       {image && <div style={{ backgroundImage: `url(${image})` }} className="chess-piece"></div>}
     </div>
   );

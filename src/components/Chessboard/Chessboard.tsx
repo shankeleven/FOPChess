@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Chessboard.css";
 import Tile from "../Tile/Tile";
 import {
@@ -78,6 +78,9 @@ export default function Chessboard({playMove, pieces} : Props) {
   }
 
   function dropPiece(e: React.MouseEvent) {
+    const el = e.target as HTMLElement
+    el.parentElement&&el.parentElement.focus();
+    // console.log(el)
     const chessboard = chessboardRef.current;
     if (activePiece && chessboard) {
       const x = Math.floor((e.clientX - chessboard.offsetLeft) / GRID_SIZE);
@@ -90,9 +93,9 @@ export default function Chessboard({playMove, pieces} : Props) {
       );
 
       if (currentPiece) {
-        var succes = playMove(currentPiece.clone(), new Position(x, y));
+        var success = playMove(currentPiece.clone(), new Position(x, y));
 
-        if(!succes) {
+        if(!success) {
           //RESETS THE PIECE POSITION
           activePiece.style.position = "relative";
           activePiece.style.removeProperty("top");
@@ -120,13 +123,16 @@ export default function Chessboard({playMove, pieces} : Props) {
       board.push(<Tile key={`${j},${i}`} image={image} number={number} highlight={highlight} />);
     }
   }
-
+function contextMenu(e:React.MouseEvent) {
+  e.preventDefault()
+}
   return (
     <>
       <div
         onMouseMove={(e) => movePiece(e)}
         onMouseDown={(e) => grabPiece(e)}
         onMouseUp={(e) => dropPiece(e)}
+        onContextMenu={(e)=> contextMenu(e)}
         id="chessboard"
         ref={chessboardRef}
       >
