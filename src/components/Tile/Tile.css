@@ -23,11 +23,11 @@
 }
 
 .black-tile {
-    background-color: #706756;
+    background-color: rgb(120,156,176);
 }
 
 .white-tile {
-    background-color: rgb(179,164,137);
+    background-color: rgb(215,224,230);
 }
 
 .tile img {
@@ -52,5 +52,12 @@
 }
 .holder:focus, .holder:active{
     cursor: grabbing;
-    background-color: burlywood;;
-  }
+    background-color: burlywood;
+  }   
+  /* .holder:focus, .holder:active{
+    cursor: grabbing;
+    background-color: burlywood;
+  } */
+  .chess-piece:focus, .chess-piece:active{
+   z-index: 400;
+  }   

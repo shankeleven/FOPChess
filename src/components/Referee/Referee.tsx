@@ -68,6 +68,7 @@ export default function Referee() {
         return playedMoveIsValid;
     }
 
+
     function isEnPassantMove(
         initialPosition: Position,
         desiredPosition: Position,
@@ -125,7 +126,7 @@ export default function Referee() {
         return validMove;
     }
 
-    function promotePawn(pieceType: PieceType) {
+    function promotePawn(pieceType: PieceType) { 
         if (promotionPawn === undefined) {
             return;
         }
@@ -173,7 +174,7 @@ export default function Referee() {
             <div className="modal hidden" ref={checkmateModalRef}>
                 <div className="modal-body">
                     <div className="checkmate-body">
-                        <span>The winning team is {board.winningTeam === TeamType.OUR ? "white" : "black"}!</span>
+                        <span>{board.winningTeam === TeamType.OUR ? "white" : "black"} is victorious!</span>
                         <button onClick={restartGame}>Play again</button>
                     </div>
                 </div>
