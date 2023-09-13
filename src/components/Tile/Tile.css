@@ -51,13 +51,19 @@
     border-radius: 50%;
 }
 .holder:focus, .holder:active{
-    cursor: grabbing;
+   
     background-color: burlywood;
   }   
   /* .holder:focus, .holder:active{
     cursor: grabbing;
     background-color: burlywood;
   } */
-  .chess-piece:focus, .chess-piece:active{
-   z-index: 400;
+    
+  .chess-piece{
+    filter: drop-shadow(0.75px 0.75px 0.5px);
   }   
+  .chess-piece:focus, .chess-piece:active{
+    cursor: grabbing;
+   z-index: 400;
+   filter: drop-shadow(0px 0px 0px);
+  } 

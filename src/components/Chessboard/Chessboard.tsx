@@ -79,8 +79,10 @@ export default function Chessboard({playMove, pieces} : Props) {
 
   function dropPiece(e: React.MouseEvent) {
     const el = e.target as HTMLElement
-    el.parentElement&&el.parentElement.focus();
-    // console.log(el)
+    // e.persist()
+    el.parentElement&&el.parentElement.classList.toggle("active");
+
+    // console.log(el.parentElement)
     const chessboard = chessboardRef.current;
     if (activePiece && chessboard) {
       const x = Math.floor((e.clientX - chessboard.offsetLeft) / GRID_SIZE);
