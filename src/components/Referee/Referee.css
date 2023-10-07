@@ -1,0 +1,13 @@
+#background{
+   height: 100%;
+   width: 100%;
+   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+   
+}
+#logo{
+   background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
+   margin: 0;
+}

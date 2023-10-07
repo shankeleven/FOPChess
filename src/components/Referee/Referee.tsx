@@ -6,6 +6,7 @@ import { Pawn } from "../../models/Pawn";
 import { bishopMove, getPossibleBishopMoves, getPossibleKingMoves, getPossibleKnightMoves, getPossiblePawnMoves, getPossibleQueenMoves, getPossibleRookMoves, kingMove, knightMove, pawnMove, queenMove, rookMove } from "../../referee/rules";
 import { PieceType, TeamType } from "../../Types";
 import Chessboard from "../Chessboard/Chessboard";
+import "./Referee.css";
 
 export default function Referee() {
     const [board, setBoard] = useState<Board>(initialBoard.clone());
@@ -159,10 +160,15 @@ export default function Referee() {
         checkmateModalRef.current?.classList.add("hidden");
         setBoard(initialBoard.clone());
     }
+    let moves:Number = board.totalTurns
+    let col:boolean = board.totalTurns == moves
 
     return (
-        <>
-            <p style={{ color: "white", fontSize: "24px", textAlign: "center" }}>Total turns: {board.totalTurns}</p>
+        <div id="background">
+        {/* <h3 style={{ fontSize: "62px", textAlign: "center" }} id="logo"> FOP Chess </h3> */}
+        
+            {/* <p style={{ color: "white", fontSize: "24px", textAlign: "center" }}>Total turns: {board.totalTurns}</p> */}
+            {/* <p style={{ color: "white", fontSize: "24px", textAlign: "center" }}>{col?"White to play":"Black to play"}</p> */}
             <div className="modal hidden" ref={modalRef}>
                 <div className="modal-body">
                     <img onClick={() => promotePawn(PieceType.ROOK)} src={`/assets/images/rook_${promotionTeamType()}.svg`} />
@@ -181,6 +187,6 @@ export default function Referee() {
             </div>
             <Chessboard playMove={playMove}
                 pieces={board.pieces} />
-        </>
+        </div>
     )
 }

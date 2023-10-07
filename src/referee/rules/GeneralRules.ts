@@ -26,6 +26,9 @@ export const tileIsOccupiedByOpponent = (
       return false;
     }
   }
+  // function hop(){
+  // event
+  // }
 
   export const tileIsEmptyOrOccupiedByOpponent =(
     position: Position,

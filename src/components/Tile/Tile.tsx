@@ -16,7 +16,7 @@ export default function Tile({ number, image, highlight }: Props) {
 
 
   return (
-    <div className={className +" "+ "holder"}>
+    <div className={className +" " + "holder"}>
       {image && <div style={{ backgroundImage: `url(${image})` }} className="chess-piece"></div>}
     </div>
   );

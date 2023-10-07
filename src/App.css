@@ -2,5 +2,9 @@
     display: grid;
     place-content: center;
     height: 100vh;
-    background-color: #202020;
+    /* background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%); */
+    /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
+    /* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+    /* background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%); */
+    background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
 }

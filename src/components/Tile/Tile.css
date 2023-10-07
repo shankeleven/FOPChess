@@ -29,7 +29,13 @@
 .white-tile {
     background-color: rgb(215,224,230);
 }
+.black-tile .dark {
+    background-color: rgb(2, 29, 44);
+}
 
+.white-tile .dark {
+    background-color: rgb(41, 109, 154);
+}
 .tile img {
     width: 80px;
 }
@@ -39,7 +45,8 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgb(0, 0, 0);
+    opacity: 60%;
 }
 
 .tile-highlight.chess-piece-tile::before {
